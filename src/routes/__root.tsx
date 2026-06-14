@@ -74,18 +74,22 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-    ],
+  meta: [
+    { charSet: "utf-8" },
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
+    { title: "RankNAV - TG EAPCET College Predictor" },
+    {
+      name: "description",
+      content:
+        "Predict engineering colleges based on your TG EAPCET rank, category and preferences.",
+    },
+    { name: "author", content: "RankNAV" },
+    { property: "og:title", content: "RankNAV - TG EAPCET College Predictor" },
+    {
+      property: "og:description",
+      content:
+        "Predict engineering colleges based on TG EAPCET rank and category.",
+    },
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
@@ -109,8 +113,24 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <HeadContent />
-      </head>
+  <HeadContent />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-X89E9PB4EG"
+  ></script>
+
+  <script
+    dangerouslySetInnerHTML={{
+      __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-X89E9PB4EG');
+      `,
+    }}
+  />
+</head>
       <body>
         {children}
         <Scripts />
