@@ -1,12 +1,11 @@
 import { Link } from "@tanstack/react-router";
-import logoAsset from "@/assets/ranknav-logo.png.asset.json";
 
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 bg-nav text-nav-foreground">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link to="/" className="flex items-center gap-2 font-bold text-lg">
-          <img src={logoAsset.url} alt="RankNav logo" className="h-9 w-9 rounded-2xl object-contain bg-white" />
+          <img src="/ranknav-logo.png" alt="RankNav logo" className="h-9 w-9 rounded-2xl object-contain bg-white" />
           <span className="tracking-tight">RankNav</span>
         </Link>
         <nav className="flex items-center gap-1 text-sm">
